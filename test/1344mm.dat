@@ -1,0 +1,2084 @@
+
+*************************************************************
+ Geant4 version Name: geant4-10-00-patch-02    (13-June-2014)
+                      Copyright : Geant4 Collaboration
+                      Reference : NIM A 506 (2003), 250-303
+                            WWW : http://cern.ch/geant4
+*************************************************************
+
+
+ Material: Galactic    density:  0.000 kg/m3   RadL: 204727512.315 pc   Nucl.Int.Length: 113427275.267 pc 
+                       Imean:  19.200 eV   temperature:   2.73 K  pressure:   0.00 atm
+
+   --->  Element: H (H)   Z =  1.0   N =   1.0   A =   1.01 g/mole
+         --->  Isotope:    H1   Z =  1   N =   1   A =   1.01 g/mole   abundance:  99.99 %
+         --->  Isotope:    H2   Z =  1   N =   2   A =   2.01 g/mole   abundance:   0.01 %
+          ElmMassFraction: 100.00 %  ElmAbundance 100.00 % 
+
+
+ Material:      P10    density:  1.530 mg/cm3  RadL: 133.725 m    Nucl.Int.Length: 732.097 m  
+                       Imean: 164.667 eV   temperature: 273.15 K  pressure:   1.00 atm
+
+   --->  Element: Argon (Ar)   Z = 18.0   N =  40.0   A =  39.95 g/mole
+         --->  Isotope:  Ar36   Z = 18   N =  36   A =  35.97 g/mole   abundance:   0.34 %
+         --->  Isotope:  Ar38   Z = 18   N =  38   A =  37.96 g/mole   abundance:   0.06 %
+         --->  Isotope:  Ar40   Z = 18   N =  40   A =  39.96 g/mole   abundance:  99.60 %
+          ElmMassFraction:  92.22 %  ElmAbundance  52.92 % 
+
+   --->  Element: Carbon (C)   Z =  6.0   N =  12.0   A =  12.01 g/mole
+         --->  Isotope:   C12   Z =  6   N =  12   A =  12.00 g/mole   abundance:  98.93 %
+         --->  Isotope:   C13   Z =  6   N =  13   A =  13.00 g/mole   abundance:   1.07 %
+          ElmMassFraction:   6.23 %  ElmAbundance  11.89 % 
+
+   --->  Element: Hydrogen (H)   Z =  1.0   N =   1.0   A =   1.01 g/mole
+         --->  Isotope:    H1   Z =  1   N =   1   A =   1.01 g/mole   abundance:  99.99 %
+         --->  Isotope:    H2   Z =  1   N =   2   A =   2.01 g/mole   abundance:   0.01 %
+          ElmMassFraction:   1.55 %  ElmAbundance  35.18 % 
+
+
+ The  WORLD   is made of 2.016 m   of Galactic. The transverse size (YZ) of the world is 1.2 m  
+ The ABSORBER is made of 1.344 m   of P10. The transverse size (YZ) is 1 m  
+ X position of the middle of the absorber 0 fm 
+G4VUserPhysicsList::SetVerboseLevel  : Verbose level is set to 2
+G4VUserPhysicsList::SetDefaultCutValue:default cut value is changed to   :1[mm]
+G4VUserPhysicsList::SetCuts:   
+Cut for gamma: 1[mm]
+Cut  for e-: 1[mm]
+Cut  for e+: 1[mm]
+Cut  for proton: 1[mm]
+
+phot:   for  gamma    SubType= 12
+      LambdaPrime table from 200 keV to 2.5 GeV in 6539 bins 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+       PhotoElectric :  Emin=        0 eV    Emax=      2.5 GeV   AngularGenSauterGavrila
+
+compt:   for  gamma    SubType= 13
+      Lambda table from 1 eV  to 1 MeV in 9577 bins, spline: 1
+      LambdaPrime table from 1 MeV to 2.5 GeV in 5423 bins 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+       Klein-Nishina :  Emin=        0 eV    Emax=      2.5 GeV
+
+conv:   for  gamma    SubType= 14
+      Lambda table from 1.022 MeV to 2.5 GeV in 5408 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        BetheHeitler :  Emin=        0 eV    Emax=      2.5 GeV
+
+msc:   for e-    SubType= 10
+      RangeFactor= 0.2, stepLimitType: 2, latDisplacement: 1, skin= 1, geomFactor= 2.5
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            UrbanMsc :  Emin=        0 eV    Emax=      2.5 GeV  Table with 11662 bins Emin=    100 eV    Emax=    2.5 GeV
+
+eIoni:   for  e-    SubType= 2
+      dE/dx and range tables from 1 eV  to 2.5 GeV in 15000 bins
+      Lambda tables from threshold to 2.5 GeV in 15000 bins, spline: 1
+      finalRange(mm)= 0.01, dRoverRange= 0.001, integral: 1, fluct: 1, linLossLimit= 1e-09
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        MollerBhabha :  Emin=        0 eV    Emax=      2.5 GeV
+
+eBrem:   for  e-    SubType= 3
+      dE/dx and range tables from 1 eV  to 2.5 GeV in 15000 bins
+      Lambda tables from threshold to 2.5 GeV in 15000 bins, spline: 1
+      LPM flag: 1 for E > 1 GeV
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+             eBremSB :  Emin=        0 eV    Emax=        1 GeV   DipBustGen
+            eBremLPM :  Emin=        1 GeV   Emax=      2.5 GeV   DipBustGen
+
+msc:   for e+    SubType= 10
+      RangeFactor= 0.2, stepLimitType: 2, latDisplacement: 1, skin= 1, geomFactor= 2.5
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            UrbanMsc :  Emin=        0 eV    Emax=      2.5 GeV  Table with 11662 bins Emin=    100 eV    Emax=    2.5 GeV
+
+eIoni:   for  e+    SubType= 2
+      dE/dx and range tables from 1 eV  to 2.5 GeV in 15000 bins
+      Lambda tables from threshold to 2.5 GeV in 15000 bins, spline: 1
+      finalRange(mm)= 0.01, dRoverRange= 0.001, integral: 1, fluct: 1, linLossLimit= 1e-09
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        MollerBhabha :  Emin=        0 eV    Emax=      2.5 GeV
+
+eBrem:   for  e+    SubType= 3
+      dE/dx and range tables from 1 eV  to 2.5 GeV in 15000 bins
+      Lambda tables from threshold to 2.5 GeV in 15000 bins, spline: 1
+      LPM flag: 1 for E > 1 GeV
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+             eBremSB :  Emin=        0 eV    Emax=        1 GeV   DipBustGen
+            eBremLPM :  Emin=        1 GeV   Emax=      2.5 GeV   DipBustGen
+
+annihil:   for  e+    SubType= 5
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            eplus2gg :  Emin=        0 eV    Emax=      2.5 GeV
+
+msc:   for proton    SubType= 10
+      RangeFactor= 0.2, stepLimitType: 2, latDisplacement: 1, skin= 1, geomFactor= 2.5
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            UrbanMsc :  Emin=        0 eV    Emax=      2.5 GeV  Table with 11662 bins Emin=    100 eV    Emax=    2.5 GeV
+
+hIoni:   for  proton    SubType= 2
+      dE/dx and range tables from 1 eV  to 2.5 GeV in 15000 bins
+      Lambda tables from threshold to 2.5 GeV in 15000 bins, spline: 1
+      finalRange(mm)= 0.01, dRoverRange= 0.001, integral: 1, fluct: 1, linLossLimit= 1e-09
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg :  Emin=        0 eV    Emax=        2 MeV
+          BetheBloch :  Emin=        2 MeV   Emax=      2.5 GeV
+
+msc:   for GenericIon    SubType= 10
+      RangeFactor= 0.2, stepLimitType: 0, latDisplacement: 0
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            UrbanMsc :  Emin=        0 eV    Emax=      2.5 GeV
+
+ionIoni:   for  GenericIon    SubType= 2
+      dE/dx and range tables from 1 eV  to 2.5 GeV in 15000 bins
+      Lambda tables from threshold to 2.5 GeV in 15000 bins, spline: 1
+      finalRange(mm)= 0.01, dRoverRange= 0.001, integral: 1, fluct: 1, linLossLimit= 1e-09
+      Stopping Power data for 17 ion/material pairs 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            BraggIon :  Emin=        0 eV    Emax=        2 MeV
+          BetheBloch :  Emin=        2 MeV   Emax=      2.5 GeV
+
+msc:   for alpha    SubType= 10
+      RangeFactor= 0.2, stepLimitType: 0, latDisplacement: 0
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            UrbanMsc :  Emin=        0 eV    Emax=      2.5 GeV  Table with 11662 bins Emin=    100 eV    Emax=    2.5 GeV
+
+ionIoni:   for  alpha    SubType= 2
+      dE/dx and range tables from 1 eV  to 2.5 GeV in 15000 bins
+      Lambda tables from threshold to 2.5 GeV in 15000 bins, spline: 1
+      finalRange(mm)= 0.01, dRoverRange= 0.001, integral: 1, fluct: 1, linLossLimit= 1e-09
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            BraggIon :  Emin=        0 eV    Emax=   7.9452 MeV
+          BetheBloch :  Emin=   7.9452 MeV   Emax=      2.5 GeV
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 9876, 54321
+----------------------------------------
+
+ ======================== run summary ======================
+
+ The run was 10000 proton of 10 MeV through 1.34 m   of P10 (density: 1.53 mg/cm3)
+
+ Total energy deposit in absorber per event = 9.999 MeV +- 613.8 eV 
+
+ -----> Mean dE/dx = 0.0744 MeV/cm	(48.63 MeV*cm2/g)
+
+ From formulas :
+   restricted dEdx = 0.04976 MeV/cm	(32.53 MeV*cm2/g)
+   full dEdx       = 0.04979 MeV/cm	(32.54 MeV*cm2/g)
+
+ Leakage :  primary = 0 eV  +- 0 eV    secondaries = 0 eV  +- 0 eV 
+ Energy balance :  edep + eleak = 9.999 MeV
+
+ Total track length (charged) in absorber per event = 1.155 m   +- 156.9 um 
+ Total track length (neutral) in absorber per event = 0 fm  +- 0 fm 
+
+ Number of steps (charged) in absorber per event = 4076 +- 0.003961
+ Number of steps (neutral) in absorber per event = 0 +- 0
+
+ Number of secondaries per event : Gammas = 0;   electrons = 0;   positrons = 0
+
+ Number of events with the primary particle transmitted = 0 %
+ Number of events with at least  1 particle transmitted (same charge as primary) = 0 %
+
+ Number of events with the primary particle reflected = 0 %
+ Number of events with at least  1 particle reflected (same charge as primary) = 0 %
+
+ MultipleScattering:
+  rms proj angle of transmit primary particle = 0 mrad (central part only)
+  computed theta0 (Highland formula)          = 56.55 mrad
+  central part defined as +- 169.7 mrad;   Tail ratio = 0 %
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 336243206, 892333277
+----------------------------------------
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 336243206, 892333277
+----------------------------------------
+
+ ======================== run summary ======================
+
+ The run was 10000 proton of 11 MeV through 1.34 m   of P10 (density: 1.53 mg/cm3)
+
+ Total energy deposit in absorber per event = 10.33 MeV +- 4.927 keV
+
+ -----> Mean dE/dx = 0.07686 MeV/cm	(50.24 MeV*cm2/g)
+
+ From formulas :
+   restricted dEdx = 0.04621 MeV/cm	(30.2 MeV*cm2/g)
+   full dEdx       = 0.04623 MeV/cm	(30.22 MeV*cm2/g)
+
+ Leakage :  primary = 666.2 keV +- 4.799 keV   secondaries = 0 eV  +- 0 eV 
+ Energy balance :  edep + eleak = 11 MeV
+
+ Total track length (charged) in absorber per event = 1.346 m   +- 113.3 um 
+ Total track length (neutral) in absorber per event = 0 fm  +- 0 fm 
+
+ Number of steps (charged) in absorber per event = 3691 +- 0.003365
+ Number of steps (neutral) in absorber per event = 0 +- 0
+
+ Number of secondaries per event : Gammas = 0;   electrons = 0;   positrons = 0
+
+ Number of events with the primary particle transmitted = 79.94 %
+ Number of events with at least  1 particle transmitted (same charge as primary) = 79.94 %
+
+ Number of events with the primary particle reflected = 0 %
+ Number of events with at least  1 particle reflected (same charge as primary) = 0 %
+
+ MultipleScattering:
+  rms proj angle of transmit primary particle = 76.02 mrad (central part only)
+  computed theta0 (Highland formula)          = 51.44 mrad
+  central part defined as +- 154.3 mrad;   Tail ratio = 16.16 %
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 970166017, 511198702
+----------------------------------------
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 970166017, 511198702
+----------------------------------------
+
+ ======================== run summary ======================
+
+ The run was 10000 proton of 12 MeV through 1.34 m   of P10 (density: 1.53 mg/cm3)
+
+ Total energy deposit in absorber per event = 8.003 MeV +- 2.14 keV
+
+ -----> Mean dE/dx = 0.05955 MeV/cm	(38.92 MeV*cm2/g)
+
+ From formulas :
+   restricted dEdx = 0.04318 MeV/cm	(28.22 MeV*cm2/g)
+   full dEdx       = 0.0432 MeV/cm	(28.24 MeV*cm2/g)
+
+ Leakage :  primary = 3.996 MeV +- 2.194 keV   secondaries = 0 eV  +- 0 eV 
+ Energy balance :  edep + eleak = 12 MeV
+
+ Total track length (charged) in absorber per event = 1.347 m   +- 66.83 um 
+ Total track length (neutral) in absorber per event = 0 fm  +- 0 fm 
+
+ Number of steps (charged) in absorber per event = 1822 +- 0.002585
+ Number of steps (neutral) in absorber per event = 0 +- 0
+
+ Number of secondaries per event : Gammas = 0;   electrons = 0;   positrons = 0
+
+ Number of events with the primary particle transmitted = 99.96 %
+ Number of events with at least  1 particle transmitted (same charge as primary) = 99.96 %
+
+ Number of events with the primary particle reflected = 0 %
+ Number of events with at least  1 particle reflected (same charge as primary) = 0 %
+
+ MultipleScattering:
+  rms proj angle of transmit primary particle = 62.53 mrad (central part only)
+  computed theta0 (Highland formula)          = 47.18 mrad
+  central part defined as +- 141.5 mrad;   Tail ratio = 6.948 %
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 1834243412, 243804968
+----------------------------------------
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 1834243412, 243804968
+----------------------------------------
+
+ ======================== run summary ======================
+
+ The run was 10000 proton of 13 MeV through 1.34 m   of P10 (density: 1.53 mg/cm3)
+
+ Total energy deposit in absorber per event = 6.986 MeV +- 1.685 keV
+
+ -----> Mean dE/dx = 0.05198 MeV/cm	(33.97 MeV*cm2/g)
+
+ From formulas :
+   restricted dEdx = 0.04056 MeV/cm	(26.51 MeV*cm2/g)
+   full dEdx       = 0.04058 MeV/cm	(26.52 MeV*cm2/g)
+
+ Leakage :  primary = 6.013 MeV +- 1.867 keV   secondaries = 0 eV  +- 0 eV 
+ Energy balance :  edep + eleak = 13 MeV
+
+ Total track length (charged) in absorber per event = 1.346 m   +- 56.13 um 
+ Total track length (neutral) in absorber per event = 0 fm  +- 0 fm 
+
+ Number of steps (charged) in absorber per event = 1307 +- 0.002369
+ Number of steps (neutral) in absorber per event = 0 +- 0
+
+ Number of secondaries per event : Gammas = 0;   electrons = 0;   positrons = 0
+
+ Number of events with the primary particle transmitted = 99.98 %
+ Number of events with at least  1 particle transmitted (same charge as primary) = 99.98 %
+
+ Number of events with the primary particle reflected = 0 %
+ Number of events with at least  1 particle reflected (same charge as primary) = 0 %
+
+ MultipleScattering:
+  rms proj angle of transmit primary particle = 54.22 mrad (central part only)
+  computed theta0 (Highland formula)          = 43.57 mrad
+  central part defined as +- 130.7 mrad;   Tail ratio = 4.596 %
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 570670436, 1622888681
+----------------------------------------
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 570670436, 1622888681
+----------------------------------------
+
+ ======================== run summary ======================
+
+ The run was 10000 proton of 14 MeV through 1.34 m   of P10 (density: 1.53 mg/cm3)
+
+ Total energy deposit in absorber per event = 6.296 MeV +- 1.507 keV
+
+ -----> Mean dE/dx = 0.04685 MeV/cm	(30.62 MeV*cm2/g)
+
+ From formulas :
+   restricted dEdx = 0.03828 MeV/cm	(25.02 MeV*cm2/g)
+   full dEdx       = 0.0383 MeV/cm	(25.03 MeV*cm2/g)
+
+ Leakage :  primary = 7.703 MeV +- 1.676 keV   secondaries = 0 eV  +- 0 eV 
+ Energy balance :  edep + eleak = 14 MeV
+
+ Total track length (charged) in absorber per event = 1.346 m   +- 48.61 um 
+ Total track length (neutral) in absorber per event = 0 fm  +- 0 fm 
+
+ Number of steps (charged) in absorber per event = 1024 +- 0.002205
+ Number of steps (neutral) in absorber per event = 0 +- 0
+
+ Number of secondaries per event : Gammas = 0;   electrons = 0;   positrons = 0
+
+ Number of events with the primary particle transmitted = 99.99 %
+ Number of events with at least  1 particle transmitted (same charge as primary) = 99.99 %
+
+ Number of events with the primary particle reflected = 0 %
+ Number of events with at least  1 particle reflected (same charge as primary) = 0 %
+
+ MultipleScattering:
+  rms proj angle of transmit primary particle = 48.29 mrad (central part only)
+  computed theta0 (Highland formula)          = 40.48 mrad
+  central part defined as +- 121.4 mrad;   Tail ratio = 3.29 %
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 208281547, 1189651698
+----------------------------------------
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 208281547, 1189651698
+----------------------------------------
+
+ ======================== run summary ======================
+
+ The run was 10000 proton of 15 MeV through 1.34 m   of P10 (density: 1.53 mg/cm3)
+
+ Total energy deposit in absorber per event = 5.775 MeV +- 1.386 keV
+
+ -----> Mean dE/dx = 0.04297 MeV/cm	(28.08 MeV*cm2/g)
+
+ From formulas :
+   restricted dEdx = 0.03629 MeV/cm	(23.72 MeV*cm2/g)
+   full dEdx       = 0.0363 MeV/cm	(23.73 MeV*cm2/g)
+
+ Leakage :  primary = 9.225 MeV +- 1.386 keV   secondaries = 0 eV  +- 0 eV 
+ Energy balance :  edep + eleak = 15 MeV
+
+ Total track length (charged) in absorber per event = 1.345 m   +- 22.68 um 
+ Total track length (neutral) in absorber per event = 0 fm  +- 0 fm 
+
+ Number of steps (charged) in absorber per event = 839.7 +- 0.001506
+ Number of steps (neutral) in absorber per event = 0 +- 0
+
+ Number of secondaries per event : Gammas = 0;   electrons = 0;   positrons = 0
+
+ Number of events with the primary particle transmitted = 100 %
+ Number of events with at least  1 particle transmitted (same charge as primary) = 100 %
+
+ Number of events with the primary particle reflected = 0 %
+ Number of events with at least  1 particle reflected (same charge as primary) = 0 %
+
+ MultipleScattering:
+  rms proj angle of transmit primary particle = 44.35 mrad (central part only)
+  computed theta0 (Highland formula)          = 37.8 mrad
+  central part defined as +- 113.4 mrad;   Tail ratio = 2.81 %
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 1877009804, 1871286313
+----------------------------------------
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 1877009804, 1871286313
+----------------------------------------
+
+ ======================== run summary ======================
+
+ The run was 10000 proton of 16 MeV through 1.34 m   of P10 (density: 1.53 mg/cm3)
+
+ Total energy deposit in absorber per event = 5.361 MeV +- 1.33 keV
+
+ -----> Mean dE/dx = 0.03989 MeV/cm	(26.07 MeV*cm2/g)
+
+ From formulas :
+   restricted dEdx = 0.03449 MeV/cm	(22.54 MeV*cm2/g)
+   full dEdx       = 0.03451 MeV/cm	(22.55 MeV*cm2/g)
+
+ Leakage :  primary = 10.64 MeV +- 1.699 keV   secondaries = 0 eV  +- 0 eV 
+ Energy balance :  edep + eleak = 16 MeV
+
+ Total track length (charged) in absorber per event = 1.345 m   +- 38.09 um 
+ Total track length (neutral) in absorber per event = 0 fm  +- 0 fm 
+
+ Number of steps (charged) in absorber per event = 708.5 +- 0.001952
+ Number of steps (neutral) in absorber per event = 0 +- 0
+
+ Number of secondaries per event : Gammas = 0;   electrons = 0;   positrons = 0
+
+ Number of events with the primary particle transmitted = 99.99 %
+ Number of events with at least  1 particle transmitted (same charge as primary) = 99.99 %
+
+ Number of events with the primary particle reflected = 0 %
+ Number of events with at least  1 particle reflected (same charge as primary) = 0 %
+
+ MultipleScattering:
+  rms proj angle of transmit primary particle = 40.4 mrad (central part only)
+  computed theta0 (Highland formula)          = 35.46 mrad
+  central part defined as +- 106.4 mrad;   Tail ratio = 2.485 %
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 2010925482, 2068301692
+----------------------------------------
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 2010925482, 2068301692
+----------------------------------------
+
+ ======================== run summary ======================
+
+ The run was 10000 proton of 17 MeV through 1.34 m   of P10 (density: 1.53 mg/cm3)
+
+ Total energy deposit in absorber per event = 5.016 MeV +- 1.297 keV
+
+ -----> Mean dE/dx = 0.03732 MeV/cm	(24.39 MeV*cm2/g)
+
+ From formulas :
+   restricted dEdx = 0.03289 MeV/cm	(21.5 MeV*cm2/g)
+   full dEdx       = 0.0329 MeV/cm	(21.51 MeV*cm2/g)
+
+ Leakage :  primary = 11.98 MeV +- 1.764 keV   secondaries = 0 eV  +- 0 eV 
+ Energy balance :  edep + eleak = 17 MeV
+
+ Total track length (charged) in absorber per event = 1.345 m   +- 35.68 um 
+ Total track length (neutral) in absorber per event = 0 fm  +- 0 fm 
+
+ Number of steps (charged) in absorber per event = 609.7 +- 0.001889
+ Number of steps (neutral) in absorber per event = 0 +- 0
+
+ Number of secondaries per event : Gammas = 0;   electrons = 0;   positrons = 0
+
+ Number of events with the primary particle transmitted = 99.98 %
+ Number of events with at least  1 particle transmitted (same charge as primary) = 99.98 %
+
+ Number of events with the primary particle reflected = 0.01 %
+ Number of events with at least  1 particle reflected (same charge as primary) = 0.01 %
+
+ MultipleScattering:
+  rms proj angle of transmit primary particle = 37.37 mrad (central part only)
+  computed theta0 (Highland formula)          = 33.39 mrad
+  central part defined as +- 100.2 mrad;   Tail ratio = 2.255 %
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 367262412, 1025216662
+----------------------------------------
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 367262412, 1025216662
+----------------------------------------
+
+ ======================== run summary ======================
+
+ The run was 10000 proton of 18 MeV through 1.34 m   of P10 (density: 1.53 mg/cm3)
+
+ Total energy deposit in absorber per event = 4.727 MeV +- 1.263 keV
+
+ -----> Mean dE/dx = 0.03517 MeV/cm	(22.99 MeV*cm2/g)
+
+ From formulas :
+   restricted dEdx = 0.03144 MeV/cm	(20.55 MeV*cm2/g)
+   full dEdx       = 0.03145 MeV/cm	(20.56 MeV*cm2/g)
+
+ Leakage :  primary = 13.27 MeV +- 1.263 keV   secondaries = 0 eV  +- 0 eV 
+ Energy balance :  edep + eleak = 18 MeV
+
+ Total track length (charged) in absorber per event = 1.345 m   +- 16.84 um 
+ Total track length (neutral) in absorber per event = 0 fm  +- 0 fm 
+
+ Number of steps (charged) in absorber per event = 532.9 +- 0.001298
+ Number of steps (neutral) in absorber per event = 0 +- 0
+
+ Number of secondaries per event : Gammas = 0;   electrons = 0;   positrons = 0
+
+ Number of events with the primary particle transmitted = 100 %
+ Number of events with at least  1 particle transmitted (same charge as primary) = 100 %
+
+ Number of events with the primary particle reflected = 0 %
+ Number of events with at least  1 particle reflected (same charge as primary) = 0 %
+
+ MultipleScattering:
+  rms proj angle of transmit primary particle = 35.07 mrad (central part only)
+  computed theta0 (Highland formula)          = 31.55 mrad
+  central part defined as +- 94.65 mrad;   Tail ratio = 2.145 %
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 516453652, 1443750684
+----------------------------------------
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 516453652, 1443750684
+----------------------------------------
+
+ ======================== run summary ======================
+
+ The run was 10000 proton of 20 MeV through 1.34 m   of P10 (density: 1.53 mg/cm3)
+
+ Total energy deposit in absorber per event = 4.252 MeV +- 1.233 keV
+
+ -----> Mean dE/dx = 0.03164 MeV/cm	(20.68 MeV*cm2/g)
+
+ From formulas :
+   restricted dEdx = 0.02893 MeV/cm	(18.91 MeV*cm2/g)
+   full dEdx       = 0.02894 MeV/cm	(18.92 MeV*cm2/g)
+
+ Leakage :  primary = 15.75 MeV +- 1.233 keV   secondaries = 0 eV  +- 0 eV 
+ Energy balance :  edep + eleak = 20 MeV
+
+ Total track length (charged) in absorber per event = 1.345 m   +- 18.8 um 
+ Total track length (neutral) in absorber per event = 0 fm  +- 0 fm 
+
+ Number of steps (charged) in absorber per event = 420.8 +- 0.001371
+ Number of steps (neutral) in absorber per event = 0 +- 0
+
+ Number of secondaries per event : Gammas = 0;   electrons = 0;   positrons = 0
+
+ Number of events with the primary particle transmitted = 100 %
+ Number of events with at least  1 particle transmitted (same charge as primary) = 100 %
+
+ Number of events with the primary particle reflected = 0 %
+ Number of events with at least  1 particle reflected (same charge as primary) = 0 %
+
+ MultipleScattering:
+  rms proj angle of transmit primary particle = 31.04 mrad (central part only)
+  computed theta0 (Highland formula)          = 28.42 mrad
+  central part defined as +- 85.27 mrad;   Tail ratio = 1.915 %
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 81973717, 396861334
+----------------------------------------
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 81973717, 396861334
+----------------------------------------
+
+ ======================== run summary ======================
+
+ The run was 10000 proton of 22.5 MeV through 1.34 m   of P10 (density: 1.53 mg/cm3)
+
+ Total energy deposit in absorber per event = 3.799 MeV +- 1.197 keV
+
+ -----> Mean dE/dx = 0.02827 MeV/cm	(18.47 MeV*cm2/g)
+
+ From formulas :
+   restricted dEdx = 0.02636 MeV/cm	(17.23 MeV*cm2/g)
+   full dEdx       = 0.02637 MeV/cm	(17.24 MeV*cm2/g)
+
+ Leakage :  primary = 18.7 MeV +- 1.197 keV   secondaries = 0 eV  +- 0 eV 
+ Energy balance :  edep + eleak = 22.5 MeV
+
+ Total track length (charged) in absorber per event = 1.345 m   +- 13.63 um 
+ Total track length (neutral) in absorber per event = 0 fm  +- 0 fm 
+
+ Number of steps (charged) in absorber per event = 327.7 +- 0.001168
+ Number of steps (neutral) in absorber per event = 0 +- 0
+
+ Number of secondaries per event : Gammas = 0;   electrons = 0;   positrons = 0
+
+ Number of events with the primary particle transmitted = 100 %
+ Number of events with at least  1 particle transmitted (same charge as primary) = 100 %
+
+ Number of events with the primary particle reflected = 0 %
+ Number of events with at least  1 particle reflected (same charge as primary) = 0 %
+
+ MultipleScattering:
+  rms proj angle of transmit primary particle = 26.88 mrad (central part only)
+  computed theta0 (Highland formula)          = 25.3 mrad
+  central part defined as +- 75.89 mrad;   Tail ratio = 1.72 %
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 1780597587, 1415343656
+----------------------------------------
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 1780597587, 1415343656
+----------------------------------------
+
+ ======================== run summary ======================
+
+ The run was 10000 proton of 25 MeV through 1.34 m   of P10 (density: 1.53 mg/cm3)
+
+ Total energy deposit in absorber per event = 3.452 MeV +- 1.207 keV
+
+ -----> Mean dE/dx = 0.02568 MeV/cm	(16.79 MeV*cm2/g)
+
+ From formulas :
+   restricted dEdx = 0.02423 MeV/cm	(15.84 MeV*cm2/g)
+   full dEdx       = 0.02425 MeV/cm	(15.85 MeV*cm2/g)
+
+ Leakage :  primary = 21.55 MeV +- 1.207 keV   secondaries = 0 eV  +- 0 eV 
+ Energy balance :  edep + eleak = 25 MeV
+
+ Total track length (charged) in absorber per event = 1.344 m   +- 10.89 um 
+ Total track length (neutral) in absorber per event = 0 fm  +- 0 fm 
+
+ Number of steps (charged) in absorber per event = 264.3 +- 0.001043
+ Number of steps (neutral) in absorber per event = 0 +- 0
+
+ Number of secondaries per event : Gammas = 0;   electrons = 0;   positrons = 0
+
+ Number of events with the primary particle transmitted = 100 %
+ Number of events with at least  1 particle transmitted (same charge as primary) = 100 %
+
+ Number of events with the primary particle reflected = 0 %
+ Number of events with at least  1 particle reflected (same charge as primary) = 0 %
+
+ MultipleScattering:
+  rms proj angle of transmit primary particle = 24.25 mrad (central part only)
+  computed theta0 (Highland formula)          = 22.8 mrad
+  central part defined as +- 68.39 mrad;   Tail ratio = 1.63 %
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 1146226384, 1739752958
+----------------------------------------
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 1146226384, 1739752958
+----------------------------------------
+
+ ======================== run summary ======================
+
+ The run was 10000 proton of 27.5 MeV through 1.34 m   of P10 (density: 1.53 mg/cm3)
+
+ Total energy deposit in absorber per event = 3.166 MeV +- 1.175 keV
+
+ -----> Mean dE/dx = 0.02356 MeV/cm	(15.4 MeV*cm2/g)
+
+ From formulas :
+   restricted dEdx = 0.02246 MeV/cm	(14.68 MeV*cm2/g)
+   full dEdx       = 0.02247 MeV/cm	(14.69 MeV*cm2/g)
+
+ Leakage :  primary = 24.33 MeV +- 2.701 keV   secondaries = 0 eV  +- 0 eV 
+ Energy balance :  edep + eleak = 27.5 MeV
+
+ Total track length (charged) in absorber per event = 1.344 m   +- 29.86 um 
+ Total track length (neutral) in absorber per event = 0 fm  +- 0 fm 
+
+ Number of steps (charged) in absorber per event = 218.7 +- 0.001728
+ Number of steps (neutral) in absorber per event = 0 +- 0
+
+ Number of secondaries per event : Gammas = 0;   electrons = 0;   positrons = 0
+
+ Number of events with the primary particle transmitted = 99.99 %
+ Number of events with at least  1 particle transmitted (same charge as primary) = 99.99 %
+
+ Number of events with the primary particle reflected = 0 %
+ Number of events with at least  1 particle reflected (same charge as primary) = 0 %
+
+ MultipleScattering:
+  rms proj angle of transmit primary particle = 21.61 mrad (central part only)
+  computed theta0 (Highland formula)          = 20.75 mrad
+  central part defined as +- 62.26 mrad;   Tail ratio = 1.455 %
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 217905512, 2069230467
+----------------------------------------
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 217905512, 2069230467
+----------------------------------------
+
+ ======================== run summary ======================
+
+ The run was 10000 proton of 30 MeV through 1.34 m   of P10 (density: 1.53 mg/cm3)
+
+ Total energy deposit in absorber per event = 2.932 MeV +- 1.154 keV
+
+ -----> Mean dE/dx = 0.02181 MeV/cm	(14.26 MeV*cm2/g)
+
+ From formulas :
+   restricted dEdx = 0.02096 MeV/cm	(13.7 MeV*cm2/g)
+   full dEdx       = 0.02097 MeV/cm	(13.7 MeV*cm2/g)
+
+ Leakage :  primary = 27.07 MeV +- 1.154 keV   secondaries = 0 eV  +- 0 eV 
+ Energy balance :  edep + eleak = 30 MeV
+
+ Total track length (charged) in absorber per event = 1.344 m   +- 7.309 um 
+ Total track length (neutral) in absorber per event = 0 fm  +- 0 fm 
+
+ Number of steps (charged) in absorber per event = 184.7 +- 0.0008549
+ Number of steps (neutral) in absorber per event = 0 +- 0
+
+ Number of secondaries per event : Gammas = 0;   electrons = 0;   positrons = 0
+
+ Number of events with the primary particle transmitted = 100 %
+ Number of events with at least  1 particle transmitted (same charge as primary) = 100 %
+
+ Number of events with the primary particle reflected = 0 %
+ Number of events with at least  1 particle reflected (same charge as primary) = 0 %
+
+ MultipleScattering:
+  rms proj angle of transmit primary particle = 19.58 mrad (central part only)
+  computed theta0 (Highland formula)          = 19.05 mrad
+  central part defined as +- 57.14 mrad;   Tail ratio = 1.51 %
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 428358435, 687689752
+----------------------------------------
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 428358435, 687689752
+----------------------------------------
+
+ ======================== run summary ======================
+
+ The run was 10000 proton of 32.5 MeV through 1.34 m   of P10 (density: 1.53 mg/cm3)
+
+ Total energy deposit in absorber per event = 2.736 MeV +- 1.144 keV
+
+ -----> Mean dE/dx = 0.02036 MeV/cm	(13.31 MeV*cm2/g)
+
+ From formulas :
+   restricted dEdx = 0.01967 MeV/cm	(12.85 MeV*cm2/g)
+   full dEdx       = 0.01967 MeV/cm	(12.86 MeV*cm2/g)
+
+ Leakage :  primary = 29.76 MeV +- 1.144 keV   secondaries = 0 eV  +- 0 eV 
+ Energy balance :  edep + eleak = 32.5 MeV
+
+ Total track length (charged) in absorber per event = 1.344 m   +- 8.336 um 
+ Total track length (neutral) in absorber per event = 0 fm  +- 0 fm 
+
+ Number of steps (charged) in absorber per event = 158.5 +- 0.000913
+ Number of steps (neutral) in absorber per event = 0 +- 0
+
+ Number of secondaries per event : Gammas = 0;   electrons = 0;   positrons = 0
+
+ Number of events with the primary particle transmitted = 100 %
+ Number of events with at least  1 particle transmitted (same charge as primary) = 100 %
+
+ Number of events with the primary particle reflected = 0 %
+ Number of events with at least  1 particle reflected (same charge as primary) = 0 %
+
+ MultipleScattering:
+  rms proj angle of transmit primary particle = 18.01 mrad (central part only)
+  computed theta0 (Highland formula)          = 17.6 mrad
+  central part defined as +- 52.81 mrad;   Tail ratio = 1.44 %
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 43383219, 146717613
+----------------------------------------
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 43383219, 146717613
+----------------------------------------
+
+ ======================== run summary ======================
+
+ The run was 10000 proton of 35 MeV through 1.34 m   of P10 (density: 1.53 mg/cm3)
+
+ Total energy deposit in absorber per event = 2.567 MeV +- 1.152 keV
+
+ -----> Mean dE/dx = 0.0191 MeV/cm	(12.48 MeV*cm2/g)
+
+ From formulas :
+   restricted dEdx = 0.01854 MeV/cm	(12.12 MeV*cm2/g)
+   full dEdx       = 0.01855 MeV/cm	(12.12 MeV*cm2/g)
+
+ Leakage :  primary = 32.43 MeV +- 1.152 keV   secondaries = 0 eV  +- 0 eV 
+ Energy balance :  edep + eleak = 35 MeV
+
+ Total track length (charged) in absorber per event = 1.344 m   +- 30.65 um 
+ Total track length (neutral) in absorber per event = 0 fm  +- 0 fm 
+
+ Number of steps (charged) in absorber per event = 137.8 +- 0.001751
+ Number of steps (neutral) in absorber per event = 0 +- 0
+
+ Number of secondaries per event : Gammas = 0;   electrons = 0;   positrons = 0
+
+ Number of events with the primary particle transmitted = 100 %
+ Number of events with at least  1 particle transmitted (same charge as primary) = 100 %
+
+ Number of events with the primary particle reflected = 0 %
+ Number of events with at least  1 particle reflected (same charge as primary) = 0 %
+
+ MultipleScattering:
+  rms proj angle of transmit primary particle = 16.76 mrad (central part only)
+  computed theta0 (Highland formula)          = 16.37 mrad
+  central part defined as +- 49.1 mrad;   Tail ratio = 1.46 %
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 48160530, 318991349
+----------------------------------------
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 48160530, 318991349
+----------------------------------------
+
+ ======================== run summary ======================
+
+ The run was 10000 proton of 37.5 MeV through 1.34 m   of P10 (density: 1.53 mg/cm3)
+
+ Total energy deposit in absorber per event = 2.422 MeV +- 1.159 keV
+
+ -----> Mean dE/dx = 0.01802 MeV/cm	(11.78 MeV*cm2/g)
+
+ From formulas :
+   restricted dEdx = 0.01756 MeV/cm	(11.48 MeV*cm2/g)
+   full dEdx       = 0.01757 MeV/cm	(11.48 MeV*cm2/g)
+
+ Leakage :  primary = 35.07 MeV +- 3.694 keV   secondaries = 0 eV  +- 0 eV 
+ Energy balance :  edep + eleak = 37.5 MeV
+
+ Total track length (charged) in absorber per event = 1.344 m   +- 14.6 um 
+ Total track length (neutral) in absorber per event = 0 fm  +- 0 fm 
+
+ Number of steps (charged) in absorber per event = 121.2 +- 0.001209
+ Number of steps (neutral) in absorber per event = 0 +- 0
+
+ Number of secondaries per event : Gammas = 0;   electrons = 0;   positrons = 0
+
+ Number of events with the primary particle transmitted = 99.99 %
+ Number of events with at least  1 particle transmitted (same charge as primary) = 99.99 %
+
+ Number of events with the primary particle reflected = 0 %
+ Number of events with at least  1 particle reflected (same charge as primary) = 0 %
+
+ MultipleScattering:
+  rms proj angle of transmit primary particle = 15.64 mrad (central part only)
+  computed theta0 (Highland formula)          = 15.3 mrad
+  central part defined as +- 45.89 mrad;   Tail ratio = 1.38 %
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 2120421675, 122227625
+----------------------------------------
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 2120421675, 122227625
+----------------------------------------
+
+ ======================== run summary ======================
+
+ The run was 10000 proton of 40 MeV through 1.34 m   of P10 (density: 1.53 mg/cm3)
+
+ Total energy deposit in absorber per event = 2.297 MeV +- 1.153 keV
+
+ -----> Mean dE/dx = 0.01709 MeV/cm	(11.17 MeV*cm2/g)
+
+ From formulas :
+   restricted dEdx = 0.0167 MeV/cm	(10.92 MeV*cm2/g)
+   full dEdx       = 0.01671 MeV/cm	(10.92 MeV*cm2/g)
+
+ Leakage :  primary = 37.7 MeV +- 1.153 keV   secondaries = 0 eV  +- 0 eV 
+ Energy balance :  edep + eleak = 40 MeV
+
+ Total track length (charged) in absorber per event = 1.344 m   +- 5.501 um 
+ Total track length (neutral) in absorber per event = 0 fm  +- 0 fm 
+
+ Number of steps (charged) in absorber per event = 107.5 +- 0.0007417
+ Number of steps (neutral) in absorber per event = 0 +- 0
+
+ Number of secondaries per event : Gammas = 0;   electrons = 0;   positrons = 0
+
+ Number of events with the primary particle transmitted = 100 %
+ Number of events with at least  1 particle transmitted (same charge as primary) = 100 %
+
+ Number of events with the primary particle reflected = 0 %
+ Number of events with at least  1 particle reflected (same charge as primary) = 0 %
+
+ MultipleScattering:
+  rms proj angle of transmit primary particle = 14.46 mrad (central part only)
+  computed theta0 (Highland formula)          = 14.36 mrad
+  central part defined as +- 43.07 mrad;   Tail ratio = 1.18 %
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 878759794, 1298146362
+----------------------------------------
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 878759794, 1298146362
+----------------------------------------
+
+ ======================== run summary ======================
+
+ The run was 10000 proton of 45 MeV through 1.34 m   of P10 (density: 1.53 mg/cm3)
+
+ Total energy deposit in absorber per event = 2.087 MeV +- 1.164 keV
+
+ -----> Mean dE/dx = 0.01553 MeV/cm	(10.15 MeV*cm2/g)
+
+ From formulas :
+   restricted dEdx = 0.01513 MeV/cm	(9.892 MeV*cm2/g)
+   full dEdx       = 0.01526 MeV/cm	(9.975 MeV*cm2/g)
+
+ Leakage :  primary = 42.91 MeV +- 4.446 keV   secondaries = 341.4 eV  +- 49.63 eV 
+ Energy balance :  edep + eleak = 45 MeV
+
+ Total track length (charged) in absorber per event = 1.36 m   +- 429.4 um 
+ Total track length (neutral) in absorber per event = 509.1 um  +- 154.3 um 
+
+ Number of steps (charged) in absorber per event = 339.8 +- 0.006553
+ Number of steps (neutral) in absorber per event = 0.0019 +- 0.006553
+
+ Number of secondaries per event : Gammas = 0.0019;   electrons = 0.1385;   positrons = 0
+
+ Number of events with the primary particle transmitted = 99.99 %
+ Number of events with at least  1 particle transmitted (same charge as primary) = 99.99 %
+
+ Number of events with the primary particle reflected = 0 %
+ Number of events with at least  1 particle reflected (same charge as primary) = 0 %
+
+ MultipleScattering:
+  rms proj angle of transmit primary particle = 12.98 mrad (central part only)
+  computed theta0 (Highland formula)          = 12.79 mrad
+  central part defined as +- 38.38 mrad;   Tail ratio = 1.25 %
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 744037590, 1587737055
+----------------------------------------
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 744037590, 1587737055
+----------------------------------------
+
+ ======================== run summary ======================
+
+ The run was 10000 proton of 50 MeV through 1.34 m   of P10 (density: 1.53 mg/cm3)
+
+ Total energy deposit in absorber per event = 1.916 MeV +- 1.171 keV
+
+ -----> Mean dE/dx = 0.01426 MeV/cm	(9.319 MeV*cm2/g)
+
+ From formulas :
+   restricted dEdx = 0.01384 MeV/cm	(9.049 MeV*cm2/g)
+   full dEdx       = 0.01407 MeV/cm	(9.194 MeV*cm2/g)
+
+ Leakage :  primary = 48.08 MeV +- 1.175 keV   secondaries = 789.2 eV  +- 76.07 eV 
+ Energy balance :  edep + eleak = 50 MeV
+
+ Total track length (charged) in absorber per event = 1.379 m   +- 674.9 um 
+ Total track length (neutral) in absorber per event = 504 um  +- 146.7 um 
+
+ Number of steps (charged) in absorber per event = 616.5 +- 0.008215
+ Number of steps (neutral) in absorber per event = 0.0032 +- 0.008215
+
+ Number of secondaries per event : Gammas = 0.0032;   electrons = 0.287;   positrons = 0
+
+ Number of events with the primary particle transmitted = 100 %
+ Number of events with at least  1 particle transmitted (same charge as primary) = 100 %
+
+ Number of events with the primary particle reflected = 0 %
+ Number of events with at least  1 particle reflected (same charge as primary) = 0 %
+
+ MultipleScattering:
+  rms proj angle of transmit primary particle = 11.63 mrad (central part only)
+  computed theta0 (Highland formula)          = 11.54 mrad
+  central part defined as +- 34.63 mrad;   Tail ratio = 1.08 %
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 765179165, 959466916
+----------------------------------------
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 765179165, 959466916
+----------------------------------------
+
+ ======================== run summary ======================
+
+ The run was 10000 proton of 55 MeV through 1.34 m   of P10 (density: 1.53 mg/cm3)
+
+ Total energy deposit in absorber per event = 1.776 MeV +- 1.194 keV
+
+ -----> Mean dE/dx = 0.01321 MeV/cm	(8.636 MeV*cm2/g)
+
+ From formulas :
+   restricted dEdx = 0.01278 MeV/cm	(8.352 MeV*cm2/g)
+   full dEdx       = 0.01307 MeV/cm	(8.544 MeV*cm2/g)
+
+ Leakage :  primary = 53.22 MeV +- 1.2 keV   secondaries = 1.285 keV +- 99.04 eV 
+ Energy balance :  edep + eleak = 55 MeV
+
+ Total track length (charged) in absorber per event = 1.392 m   +- 833.6 um 
+ Total track length (neutral) in absorber per event = 631 um  +- 179.9 um 
+
+ Number of steps (charged) in absorber per event = 766 +- 0.00913
+ Number of steps (neutral) in absorber per event = 0.0044 +- 0.00913
+
+ Number of secondaries per event : Gammas = 0.0044;   electrons = 0.3617;   positrons = 0
+
+ Number of events with the primary particle transmitted = 100 %
+ Number of events with at least  1 particle transmitted (same charge as primary) = 100 %
+
+ Number of events with the primary particle reflected = 0 %
+ Number of events with at least  1 particle reflected (same charge as primary) = 0 %
+
+ MultipleScattering:
+  rms proj angle of transmit primary particle = 10.62 mrad (central part only)
+  computed theta0 (Highland formula)          = 10.52 mrad
+  central part defined as +- 31.56 mrad;   Tail ratio = 1.32 %
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 1020059837, 832362824
+----------------------------------------
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 1020059837, 832362824
+----------------------------------------
+
+ ======================== run summary ======================
+
+ The run was 10000 proton of 60 MeV through 1.34 m   of P10 (density: 1.53 mg/cm3)
+
+ Total energy deposit in absorber per event = 1.658 MeV +- 1.196 keV
+
+ -----> Mean dE/dx = 0.01234 MeV/cm	(8.063 MeV*cm2/g)
+
+ From formulas :
+   restricted dEdx = 0.01188 MeV/cm	(7.767 MeV*cm2/g)
+   full dEdx       = 0.01223 MeV/cm	(7.992 MeV*cm2/g)
+
+ Leakage :  primary = 58.34 MeV +- 1.207 keV   secondaries = 1.896 keV +- 125.3 eV 
+ Energy balance :  edep + eleak = 60 MeV
+
+ Total track length (charged) in absorber per event = 1.405 m   +- 973.2 um 
+ Total track length (neutral) in absorber per event = 1.38 mm  +- 286.6 um 
+
+ Number of steps (charged) in absorber per event = 898.9 +- 0.009865
+ Number of steps (neutral) in absorber per event = 0.0055 +- 0.009865
+
+ Number of secondaries per event : Gammas = 0.0055;   electrons = 0.4243;   positrons = 0
+
+ Number of events with the primary particle transmitted = 100 %
+ Number of events with at least  1 particle transmitted (same charge as primary) = 100 %
+
+ Number of events with the primary particle reflected = 0 %
+ Number of events with at least  1 particle reflected (same charge as primary) = 0 %
+
+ MultipleScattering:
+  rms proj angle of transmit primary particle = 9.721 mrad (central part only)
+  computed theta0 (Highland formula)          = 9.666 mrad
+  central part defined as +- 29 mrad;   Tail ratio = 1.1 %
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 1159664845, 1152166558
+----------------------------------------
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 1159664845, 1152166558
+----------------------------------------
+
+ ======================== run summary ======================
+
+ The run was 10000 proton of 65 MeV through 1.34 m   of P10 (density: 1.53 mg/cm3)
+
+ Total energy deposit in absorber per event = 1.558 MeV +- 1.201 keV
+
+ -----> Mean dE/dx = 0.01159 MeV/cm	(7.577 MeV*cm2/g)
+
+ From formulas :
+   restricted dEdx = 0.01112 MeV/cm	(7.27 MeV*cm2/g)
+   full dEdx       = 0.01151 MeV/cm	(7.521 MeV*cm2/g)
+
+ Leakage :  primary = 63.44 MeV +- 1.216 keV   secondaries = 2.14 keV +- 138.1 eV 
+ Energy balance :  edep + eleak = 65 MeV
+
+ Total track length (charged) in absorber per event = 1.412 m   +- 1.075 mm 
+ Total track length (neutral) in absorber per event = 1.196 mm  +- 263.7 um 
+
+ Number of steps (charged) in absorber per event = 958.1 +- 0.01037
+ Number of steps (neutral) in absorber per event = 0.0074 +- 0.01037
+
+ Number of secondaries per event : Gammas = 0.0073;   electrons = 0.4511;   positrons = 0
+
+ Number of events with the primary particle transmitted = 100 %
+ Number of events with at least  1 particle transmitted (same charge as primary) = 100 %
+
+ Number of events with the primary particle reflected = 0 %
+ Number of events with at least  1 particle reflected (same charge as primary) = 0 %
+
+ MultipleScattering:
+  rms proj angle of transmit primary particle = 8.929 mrad (central part only)
+  computed theta0 (Highland formula)          = 8.944 mrad
+  central part defined as +- 26.83 mrad;   Tail ratio = 1.215 %
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 723841798, 1044926895
+----------------------------------------
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 723841798, 1044926895
+----------------------------------------
+
+ ======================== run summary ======================
+
+ The run was 10000 proton of 70 MeV through 1.34 m   of P10 (density: 1.53 mg/cm3)
+
+ Total energy deposit in absorber per event = 1.472 MeV +- 1.202 keV
+
+ -----> Mean dE/dx = 0.01096 MeV/cm	(7.161 MeV*cm2/g)
+
+ From formulas :
+   restricted dEdx = 0.01046 MeV/cm	(6.839 MeV*cm2/g)
+   full dEdx       = 0.01088 MeV/cm	(7.109 MeV*cm2/g)
+
+ Leakage :  primary = 68.53 MeV +- 1.217 keV   secondaries = 2.505 keV +- 150.5 eV 
+ Energy balance :  edep + eleak = 70 MeV
+
+ Total track length (charged) in absorber per event = 1.421 m   +- 1.189 mm 
+ Total track length (neutral) in absorber per event = 1.407 mm  +- 283.8 um 
+
+ Number of steps (charged) in absorber per event = 1031 +- 0.0109
+ Number of steps (neutral) in absorber per event = 0.0084 +- 0.0109
+
+ Number of secondaries per event : Gammas = 0.0084;   electrons = 0.4791;   positrons = 0
+
+ Number of events with the primary particle transmitted = 100 %
+ Number of events with at least  1 particle transmitted (same charge as primary) = 100 %
+
+ Number of events with the primary particle reflected = 0 %
+ Number of events with at least  1 particle reflected (same charge as primary) = 0 %
+
+ MultipleScattering:
+  rms proj angle of transmit primary particle = 8.345 mrad (central part only)
+  computed theta0 (Highland formula)          = 8.325 mrad
+  central part defined as +- 24.98 mrad;   Tail ratio = 1.24 %
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 1947593812, 47111439
+----------------------------------------
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 1947593812, 47111439
+----------------------------------------
+
+ ======================== run summary ======================
+
+ The run was 10000 proton of 80 MeV through 1.34 m   of P10 (density: 1.53 mg/cm3)
+
+ Total energy deposit in absorber per event = 1.326 MeV +- 1.234 keV
+
+ -----> Mean dE/dx = 0.009864 MeV/cm	(6.447 MeV*cm2/g)
+
+ From formulas :
+   restricted dEdx = 0.009383 MeV/cm	(6.133 MeV*cm2/g)
+   full dEdx       = 0.009837 MeV/cm	(6.429 MeV*cm2/g)
+
+ Leakage :  primary = 78.67 MeV +- 1.259 keV   secondaries = 3.4 keV +- 186 eV 
+ Energy balance :  edep + eleak = 80 MeV
+
+ Total track length (charged) in absorber per event = 1.431 m   +- 1.362 mm 
+ Total track length (neutral) in absorber per event = 1.063 mm  +- 240 um 
+
+ Number of steps (charged) in absorber per event = 1078 +- 0.01167
+ Number of steps (neutral) in absorber per event = 0.0066 +- 0.01167
+
+ Number of secondaries per event : Gammas = 0.0066;   electrons = 0.4941;   positrons = 0
+
+ Number of events with the primary particle transmitted = 100 %
+ Number of events with at least  1 particle transmitted (same charge as primary) = 100 %
+
+ Number of events with the primary particle reflected = 0 %
+ Number of events with at least  1 particle reflected (same charge as primary) = 0 %
+
+ MultipleScattering:
+  rms proj angle of transmit primary particle = 7.314 mrad (central part only)
+  computed theta0 (Highland formula)          = 7.319 mrad
+  central part defined as +- 21.96 mrad;   Tail ratio = 1.255 %
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 1962904844, 1573857460
+----------------------------------------
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 1962904844, 1573857460
+----------------------------------------
+
+ ======================== run summary ======================
+
+ The run was 10000 proton of 90 MeV through 1.34 m   of P10 (density: 1.53 mg/cm3)
+
+ Total energy deposit in absorber per event = 1.215 MeV +- 1.231 keV
+
+ -----> Mean dE/dx = 0.009041 MeV/cm	(5.909 MeV*cm2/g)
+
+ From formulas :
+   restricted dEdx = 0.008537 MeV/cm	(5.58 MeV*cm2/g)
+   full dEdx       = 0.009014 MeV/cm	(5.892 MeV*cm2/g)
+
+ Leakage :  primary = 88.78 MeV +- 1.258 keV   secondaries = 3.751 keV +- 207.4 eV 
+ Energy balance :  edep + eleak = 90 MeV
+
+ Total track length (charged) in absorber per event = 1.441 m   +- 1.498 mm 
+ Total track length (neutral) in absorber per event = 1.76 mm  +- 318.5 um 
+
+ Number of steps (charged) in absorber per event = 1116 +- 0.01224
+ Number of steps (neutral) in absorber per event = 0.01 +- 0.01224
+
+ Number of secondaries per event : Gammas = 0.01;   electrons = 0.5039;   positrons = 0
+
+ Number of events with the primary particle transmitted = 100 %
+ Number of events with at least  1 particle transmitted (same charge as primary) = 100 %
+
+ Number of events with the primary particle reflected = 0 %
+ Number of events with at least  1 particle reflected (same charge as primary) = 0 %
+
+ MultipleScattering:
+  rms proj angle of transmit primary particle = 6.564 mrad (central part only)
+  computed theta0 (Highland formula)          = 6.537 mrad
+  central part defined as +- 19.61 mrad;   Tail ratio = 0.995 %
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 1598308422, 2054549172
+----------------------------------------
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 1598308422, 2054549172
+----------------------------------------
+
+ ======================== run summary ======================
+
+ The run was 10000 proton of 100 MeV through 1.34 m   of P10 (density: 1.53 mg/cm3)
+
+ Total energy deposit in absorber per event = 1.122 MeV +- 1.232 keV
+
+ -----> Mean dE/dx = 0.008352 MeV/cm	(5.458 MeV*cm2/g)
+
+ From formulas :
+   restricted dEdx = 0.007853 MeV/cm	(5.133 MeV*cm2/g)
+   full dEdx       = 0.008344 MeV/cm	(5.453 MeV*cm2/g)
+
+ Leakage :  primary = 98.87 MeV +- 1.266 keV   secondaries = 4.134 keV +- 221.4 eV 
+ Energy balance :  edep + eleak = 100 MeV
+
+ Total track length (charged) in absorber per event = 1.448 m   +- 1.677 mm 
+ Total track length (neutral) in absorber per event = 1.568 mm  +- 285.6 um 
+
+ Number of steps (charged) in absorber per event = 1110 +- 0.01295
+ Number of steps (neutral) in absorber per event = 0.0086 +- 0.01295
+
+ Number of secondaries per event : Gammas = 0.0086;   electrons = 0.4892;   positrons = 0
+
+ Number of events with the primary particle transmitted = 100 %
+ Number of events with at least  1 particle transmitted (same charge as primary) = 100 %
+
+ Number of events with the primary particle reflected = 0 %
+ Number of events with at least  1 particle reflected (same charge as primary) = 0 %
+
+ MultipleScattering:
+  rms proj angle of transmit primary particle = 5.875 mrad (central part only)
+  computed theta0 (Highland formula)          = 5.91 mrad
+  central part defined as +- 17.73 mrad;   Tail ratio = 1.225 %
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 1819166186, 26580521
+----------------------------------------
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 1819166186, 26580521
+----------------------------------------
+
+ ======================== run summary ======================
+
+ The run was 10000 proton of 110 MeV through 1.34 m   of P10 (density: 1.53 mg/cm3)
+
+ Total energy deposit in absorber per event = 1.045 MeV +- 1.22 keV
+
+ -----> Mean dE/dx = 0.007773 MeV/cm	(5.081 MeV*cm2/g)
+
+ From formulas :
+   restricted dEdx = 0.00729 MeV/cm	(4.764 MeV*cm2/g)
+   full dEdx       = 0.007788 MeV/cm	(5.09 MeV*cm2/g)
+
+ Leakage :  primary = 109 MeV +- 1.255 keV   secondaries = 4.108 keV +- 233.2 eV 
+ Energy balance :  edep + eleak = 110 MeV
+
+ Total track length (charged) in absorber per event = 1.447 m   +- 1.756 mm 
+ Total track length (neutral) in absorber per event = 1.769 mm  +- 331.1 um 
+
+ Number of steps (charged) in absorber per event = 1061 +- 0.01325
+ Number of steps (neutral) in absorber per event = 0.0074 +- 0.01325
+
+ Number of secondaries per event : Gammas = 0.0074;   electrons = 0.4612;   positrons = 0
+
+ Number of events with the primary particle transmitted = 99.99 %
+ Number of events with at least  1 particle transmitted (same charge as primary) = 99.99 %
+
+ Number of events with the primary particle reflected = 0.01 %
+ Number of events with at least  1 particle reflected (same charge as primary) = 0.01 %
+
+ MultipleScattering:
+  rms proj angle of transmit primary particle = 5.374 mrad (central part only)
+  computed theta0 (Highland formula)          = 5.397 mrad
+  central part defined as +- 16.19 mrad;   Tail ratio = 1.305 %
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 1445453776, 399814268
+----------------------------------------
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 1445453776, 399814268
+----------------------------------------
+
+ ======================== run summary ======================
+
+ The run was 10000 proton of 120 MeV through 1.34 m   of P10 (density: 1.53 mg/cm3)
+
+ Total energy deposit in absorber per event = 981.3 keV +- 1.23 keV
+
+ -----> Mean dE/dx = 0.007302 MeV/cm	(4.772 MeV*cm2/g)
+
+ From formulas :
+   restricted dEdx = 0.006817 MeV/cm	(4.456 MeV*cm2/g)
+   full dEdx       = 0.007318 MeV/cm	(4.783 MeV*cm2/g)
+
+ Leakage :  primary = 119 MeV +- 1.275 keV   secondaries = 4.734 keV +- 265.8 eV 
+ Energy balance :  edep + eleak = 120 MeV
+
+ Total track length (charged) in absorber per event = 1.453 m   +- 1.88 mm 
+ Total track length (neutral) in absorber per event = 1.644 mm  +- 319.6 um 
+
+ Number of steps (charged) in absorber per event = 1071 +- 0.01371
+ Number of steps (neutral) in absorber per event = 0.009 +- 0.01371
+
+ Number of secondaries per event : Gammas = 0.009;   electrons = 0.4639;   positrons = 0
+
+ Number of events with the primary particle transmitted = 100 %
+ Number of events with at least  1 particle transmitted (same charge as primary) = 100 %
+
+ Number of events with the primary particle reflected = 0 %
+ Number of events with at least  1 particle reflected (same charge as primary) = 0 %
+
+ MultipleScattering:
+  rms proj angle of transmit primary particle = 4.961 mrad (central part only)
+  computed theta0 (Highland formula)          = 4.97 mrad
+  central part defined as +- 14.91 mrad;   Tail ratio = 1.43 %
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 460946332, 2031596572
+----------------------------------------
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 460946332, 2031596572
+----------------------------------------
+
+ ======================== run summary ======================
+
+ The run was 10000 proton of 130 MeV through 1.34 m   of P10 (density: 1.53 mg/cm3)
+
+ Total energy deposit in absorber per event = 925.6 keV +- 1.236 keV
+
+ -----> Mean dE/dx = 0.006887 MeV/cm	(4.501 MeV*cm2/g)
+
+ From formulas :
+   restricted dEdx = 0.006416 MeV/cm	(4.193 MeV*cm2/g)
+   full dEdx       = 0.006917 MeV/cm	(4.521 MeV*cm2/g)
+
+ Leakage :  primary = 129.1 MeV +- 1.286 keV   secondaries = 5.452 keV +- 287.8 eV 
+ Energy balance :  edep + eleak = 130 MeV
+
+ Total track length (charged) in absorber per event = 1.452 m   +- 1.957 mm 
+ Total track length (neutral) in absorber per event = 1.768 mm  +- 343.3 um 
+
+ Number of steps (charged) in absorber per event = 1018 +- 0.01399
+ Number of steps (neutral) in absorber per event = 0.0071 +- 0.01399
+
+ Number of secondaries per event : Gammas = 0.0071;   electrons = 0.4413;   positrons = 0
+
+ Number of events with the primary particle transmitted = 100 %
+ Number of events with at least  1 particle transmitted (same charge as primary) = 100 %
+
+ Number of events with the primary particle reflected = 0 %
+ Number of events with at least  1 particle reflected (same charge as primary) = 0 %
+
+ MultipleScattering:
+  rms proj angle of transmit primary particle = 4.606 mrad (central part only)
+  computed theta0 (Highland formula)          = 4.608 mrad
+  central part defined as +- 13.82 mrad;   Tail ratio = 1.355 %
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 1546909307, 45082130
+----------------------------------------
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 1546909307, 45082130
+----------------------------------------
+
+ ======================== run summary ======================
+
+ The run was 10000 proton of 140 MeV through 1.34 m   of P10 (density: 1.53 mg/cm3)
+
+ Total energy deposit in absorber per event = 880 keV +- 1.23 keV
+
+ -----> Mean dE/dx = 0.006547 MeV/cm	(4.279 MeV*cm2/g)
+
+ From formulas :
+   restricted dEdx = 0.00607 MeV/cm	(3.967 MeV*cm2/g)
+   full dEdx       = 0.00657 MeV/cm	(4.294 MeV*cm2/g)
+
+ Leakage :  primary = 139.1 MeV +- 1.286 keV   secondaries = 5.459 keV +- 302.1 eV 
+ Energy balance :  edep + eleak = 140 MeV
+
+ Total track length (charged) in absorber per event = 1.459 m   +- 2.067 mm 
+ Total track length (neutral) in absorber per event = 1.481 mm  +- 294.5 um 
+
+ Number of steps (charged) in absorber per event = 1036 +- 0.01438
+ Number of steps (neutral) in absorber per event = 0.0076 +- 0.01438
+
+ Number of secondaries per event : Gammas = 0.0076;   electrons = 0.4425;   positrons = 0
+
+ Number of events with the primary particle transmitted = 100 %
+ Number of events with at least  1 particle transmitted (same charge as primary) = 100 %
+
+ Number of events with the primary particle reflected = 0 %
+ Number of events with at least  1 particle reflected (same charge as primary) = 0 %
+
+ MultipleScattering:
+  rms proj angle of transmit primary particle = 4.295 mrad (central part only)
+  computed theta0 (Highland formula)          = 4.297 mrad
+  central part defined as +- 12.89 mrad;   Tail ratio = 1.445 %
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 873512906, 1715337283
+----------------------------------------
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 873512906, 1715337283
+----------------------------------------
+
+ ======================== run summary ======================
+
+ The run was 10000 proton of 150 MeV through 1.34 m   of P10 (density: 1.53 mg/cm3)
+
+ Total energy deposit in absorber per event = 837.6 keV +- 1.242 keV
+
+ -----> Mean dE/dx = 0.006232 MeV/cm	(4.073 MeV*cm2/g)
+
+ From formulas :
+   restricted dEdx = 0.005769 MeV/cm	(3.77 MeV*cm2/g)
+   full dEdx       = 0.006267 MeV/cm	(4.096 MeV*cm2/g)
+
+ Leakage :  primary = 149.2 MeV +- 1.318 keV   secondaries = 5.881 keV +- 322.9 eV 
+ Energy balance :  edep + eleak = 150 MeV
+
+ Total track length (charged) in absorber per event = 1.459 m   +- 2.168 mm 
+ Total track length (neutral) in absorber per event = 2.132 mm  +- 340.5 um 
+
+ Number of steps (charged) in absorber per event = 1002 +- 0.01472
+ Number of steps (neutral) in absorber per event = 0.0102 +- 0.01472
+
+ Number of secondaries per event : Gammas = 0.0102;   electrons = 0.4284;   positrons = 0
+
+ Number of events with the primary particle transmitted = 100 %
+ Number of events with at least  1 particle transmitted (same charge as primary) = 100 %
+
+ Number of events with the primary particle reflected = 0 %
+ Number of events with at least  1 particle reflected (same charge as primary) = 0 %
+
+ MultipleScattering:
+  rms proj angle of transmit primary particle = 4.028 mrad (central part only)
+  computed theta0 (Highland formula)          = 4.028 mrad
+  central part defined as +- 12.08 mrad;   Tail ratio = 1.31 %
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 190528850, 158726943
+----------------------------------------
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 190528850, 158726943
+----------------------------------------
+
+ ======================== run summary ======================
+
+ The run was 10000 proton of 160 MeV through 1.34 m   of P10 (density: 1.53 mg/cm3)
+
+ Total energy deposit in absorber per event = 803 keV +- 1.255 keV
+
+ -----> Mean dE/dx = 0.005975 MeV/cm	(3.905 MeV*cm2/g)
+
+ From formulas :
+   restricted dEdx = 0.005505 MeV/cm	(3.598 MeV*cm2/g)
+   full dEdx       = 0.006 MeV/cm	(3.922 MeV*cm2/g)
+
+ Leakage :  primary = 159.2 MeV +- 1.326 keV   secondaries = 5.693 keV +- 316.6 eV 
+ Energy balance :  edep + eleak = 160 MeV
+
+ Total track length (charged) in absorber per event = 1.463 m   +- 2.31 mm 
+ Total track length (neutral) in absorber per event = 2.32 mm  +- 390.8 um 
+
+ Number of steps (charged) in absorber per event = 978.7 +- 0.0152
+ Number of steps (neutral) in absorber per event = 0.0107 +- 0.0152
+
+ Number of secondaries per event : Gammas = 0.0106;   electrons = 0.4159;   positrons = 0
+
+ Number of events with the primary particle transmitted = 100 %
+ Number of events with at least  1 particle transmitted (same charge as primary) = 100 %
+
+ Number of events with the primary particle reflected = 0 %
+ Number of events with at least  1 particle reflected (same charge as primary) = 0 %
+
+ MultipleScattering:
+  rms proj angle of transmit primary particle = 3.792 mrad (central part only)
+  computed theta0 (Highland formula)          = 3.792 mrad
+  central part defined as +- 11.38 mrad;   Tail ratio = 1.31 %
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 1485415131, 551831346
+----------------------------------------
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 1485415131, 551831346
+----------------------------------------
+
+ ======================== run summary ======================
+
+ The run was 10000 proton of 170 MeV through 1.34 m   of P10 (density: 1.53 mg/cm3)
+
+ Total energy deposit in absorber per event = 766.7 keV +- 1.21 keV
+
+ -----> Mean dE/dx = 0.005705 MeV/cm	(3.729 MeV*cm2/g)
+
+ From formulas :
+   restricted dEdx = 0.005271 MeV/cm	(3.445 MeV*cm2/g)
+   full dEdx       = 0.005763 MeV/cm	(3.767 MeV*cm2/g)
+
+ Leakage :  primary = 169.2 MeV +- 1.305 keV   secondaries = 6.33 keV +- 353.4 eV 
+ Energy balance :  edep + eleak = 170 MeV
+
+ Total track length (charged) in absorber per event = 1.454 m   +- 2.213 mm 
+ Total track length (neutral) in absorber per event = 1.397 mm  +- 281.6 um 
+
+ Number of steps (charged) in absorber per event = 903.8 +- 0.01487
+ Number of steps (neutral) in absorber per event = 0.0083 +- 0.01487
+
+ Number of secondaries per event : Gammas = 0.0083;   electrons = 0.3877;   positrons = 0
+
+ Number of events with the primary particle transmitted = 100 %
+ Number of events with at least  1 particle transmitted (same charge as primary) = 100 %
+
+ Number of events with the primary particle reflected = 0 %
+ Number of events with at least  1 particle reflected (same charge as primary) = 0 %
+
+ MultipleScattering:
+  rms proj angle of transmit primary particle = 3.569 mrad (central part only)
+  computed theta0 (Highland formula)          = 3.584 mrad
+  central part defined as +- 10.75 mrad;   Tail ratio = 1.325 %
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 575045275, 1707141153
+----------------------------------------
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 575045275, 1707141153
+----------------------------------------
+
+ ======================== run summary ======================
+
+ The run was 10000 proton of 180 MeV through 1.34 m   of P10 (density: 1.53 mg/cm3)
+
+ Total energy deposit in absorber per event = 740.6 keV +- 1.241 keV
+
+ -----> Mean dE/dx = 0.00551 MeV/cm	(3.602 MeV*cm2/g)
+
+ From formulas :
+   restricted dEdx = 0.005063 MeV/cm	(3.309 MeV*cm2/g)
+   full dEdx       = 0.005551 MeV/cm	(3.628 MeV*cm2/g)
+
+ Leakage :  primary = 179.3 MeV +- 1.359 keV   secondaries = 7.053 keV +- 378.7 eV 
+ Energy balance :  edep + eleak = 180 MeV
+
+ Total track length (charged) in absorber per event = 1.462 m   +- 2.376 mm 
+ Total track length (neutral) in absorber per event = 1.705 mm  +- 308 um 
+
+ Number of steps (charged) in absorber per event = 923.1 +- 0.01542
+ Number of steps (neutral) in absorber per event = 0.0095 +- 0.01542
+
+ Number of secondaries per event : Gammas = 0.0095;   electrons = 0.398;   positrons = 0
+
+ Number of events with the primary particle transmitted = 100 %
+ Number of events with at least  1 particle transmitted (same charge as primary) = 100 %
+
+ Number of events with the primary particle reflected = 0 %
+ Number of events with at least  1 particle reflected (same charge as primary) = 0 %
+
+ MultipleScattering:
+  rms proj angle of transmit primary particle = 3.367 mrad (central part only)
+  computed theta0 (Highland formula)          = 3.399 mrad
+  central part defined as +- 10.2 mrad;   Tail ratio = 1.415 %
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 1995425608, 162003026
+----------------------------------------
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 1995425608, 162003026
+----------------------------------------
+
+ ======================== run summary ======================
+
+ The run was 10000 proton of 200 MeV through 1.34 m   of P10 (density: 1.53 mg/cm3)
+
+ Total energy deposit in absorber per event = 688.3 keV +- 1.171 keV
+
+ -----> Mean dE/dx = 0.005121 MeV/cm	(3.347 MeV*cm2/g)
+
+ From formulas :
+   restricted dEdx = 0.004707 MeV/cm	(3.077 MeV*cm2/g)
+   full dEdx       = 0.005189 MeV/cm	(3.391 MeV*cm2/g)
+
+ Leakage :  primary = 199.3 MeV +- 1.32 keV   secondaries = 8.06 keV +- 441.4 eV 
+ Energy balance :  edep + eleak = 200 MeV
+
+ Total track length (charged) in absorber per event = 1.454 m   +- 2.306 mm 
+ Total track length (neutral) in absorber per event = 2.172 mm  +- 362.3 um 
+
+ Number of steps (charged) in absorber per event = 842.2 +- 0.01518
+ Number of steps (neutral) in absorber per event = 0.0092 +- 0.01518
+
+ Number of secondaries per event : Gammas = 0.0092;   electrons = 0.3693;   positrons = 0
+
+ Number of events with the primary particle transmitted = 100 %
+ Number of events with at least  1 particle transmitted (same charge as primary) = 100 %
+
+ Number of events with the primary particle reflected = 0 %
+ Number of events with at least  1 particle reflected (same charge as primary) = 0 %
+
+ MultipleScattering:
+  rms proj angle of transmit primary particle = 3.037 mrad (central part only)
+  computed theta0 (Highland formula)          = 3.084 mrad
+  central part defined as +- 9.251 mrad;   Tail ratio = 1.43 %
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 319356842, 950199234
+----------------------------------------
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 319356842, 950199234
+----------------------------------------
+
+ ======================== run summary ======================
+
+ The run was 10000 proton of 225 MeV through 1.34 m   of P10 (density: 1.53 mg/cm3)
+
+ Total energy deposit in absorber per event = 638.8 keV +- 1.191 keV
+
+ -----> Mean dE/dx = 0.004753 MeV/cm	(3.106 MeV*cm2/g)
+
+ From formulas :
+   restricted dEdx = 0.004351 MeV/cm	(2.844 MeV*cm2/g)
+   full dEdx       = 0.004823 MeV/cm	(3.152 MeV*cm2/g)
+
+ Leakage :  primary = 224.4 MeV +- 1.387 keV   secondaries = 8.322 keV +- 459.3 eV 
+ Energy balance :  edep + eleak = 225 MeV
+
+ Total track length (charged) in absorber per event = 1.458 m   +- 2.518 mm 
+ Total track length (neutral) in absorber per event = 1.77 mm  +- 303.3 um 
+
+ Number of steps (charged) in absorber per event = 808.7 +- 0.01587
+ Number of steps (neutral) in absorber per event = 0.0096 +- 0.01587
+
+ Number of secondaries per event : Gammas = 0.0096;   electrons = 0.3566;   positrons = 0
+
+ Number of events with the primary particle transmitted = 100 %
+ Number of events with at least  1 particle transmitted (same charge as primary) = 100 %
+
+ Number of events with the primary particle reflected = 0 %
+ Number of events with at least  1 particle reflected (same charge as primary) = 0 %
+
+ MultipleScattering:
+  rms proj angle of transmit primary particle = 2.744 mrad (central part only)
+  computed theta0 (Highland formula)          = 2.768 mrad
+  central part defined as +- 8.304 mrad;   Tail ratio = 1.62 %
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 1346121535, 1291065314
+----------------------------------------
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 1346121535, 1291065314
+----------------------------------------
+
+ ======================== run summary ======================
+
+ The run was 10000 proton of 250 MeV through 1.34 m   of P10 (density: 1.53 mg/cm3)
+
+ Total energy deposit in absorber per event = 599.1 keV +- 1.16 keV
+
+ -----> Mean dE/dx = 0.004458 MeV/cm	(2.914 MeV*cm2/g)
+
+ From formulas :
+   restricted dEdx = 0.004065 MeV/cm	(2.657 MeV*cm2/g)
+   full dEdx       = 0.004528 MeV/cm	(2.96 MeV*cm2/g)
+
+ Leakage :  primary = 249.4 MeV +- 1.388 keV   secondaries = 7.774 keV +- 473.9 eV 
+ Energy balance :  edep + eleak = 250 MeV
+
+ Total track length (charged) in absorber per event = 1.453 m   +- 2.485 mm 
+ Total track length (neutral) in absorber per event = 1.744 mm  +- 288.3 um 
+
+ Number of steps (charged) in absorber per event = 760.4 +- 0.01576
+ Number of steps (neutral) in absorber per event = 0.0075 +- 0.01576
+
+ Number of secondaries per event : Gammas = 0.0075;   electrons = 0.3333;   positrons = 0
+
+ Number of events with the primary particle transmitted = 100 %
+ Number of events with at least  1 particle transmitted (same charge as primary) = 100 %
+
+ Number of events with the primary particle reflected = 0 %
+ Number of events with at least  1 particle reflected (same charge as primary) = 0 %
+
+ MultipleScattering:
+  rms proj angle of transmit primary particle = 2.471 mrad (central part only)
+  computed theta0 (Highland formula)          = 2.515 mrad
+  central part defined as +- 7.544 mrad;   Tail ratio = 1.535 %
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 521997588, 55505335
+----------------------------------------
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 521997588, 55505335
+----------------------------------------
+
+ ======================== run summary ======================
+
+ The run was 10000 proton of 275 MeV through 1.34 m   of P10 (density: 1.53 mg/cm3)
+
+ Total energy deposit in absorber per event = 564.4 keV +- 1.117 keV
+
+ -----> Mean dE/dx = 0.004199 MeV/cm	(2.745 MeV*cm2/g)
+
+ From formulas :
+   restricted dEdx = 0.003831 MeV/cm	(2.504 MeV*cm2/g)
+   full dEdx       = 0.004286 MeV/cm	(2.801 MeV*cm2/g)
+
+ Leakage :  primary = 274.4 MeV +- 1.401 keV   secondaries = 9.358 keV +- 557.6 eV 
+ Energy balance :  edep + eleak = 275 MeV
+
+ Total track length (charged) in absorber per event = 1.45 m   +- 2.438 mm 
+ Total track length (neutral) in absorber per event = 1.971 mm  +- 363.1 um 
+
+ Number of steps (charged) in absorber per event = 720 +- 0.01561
+ Number of steps (neutral) in absorber per event = 0.0082 +- 0.01561
+
+ Number of secondaries per event : Gammas = 0.0082;   electrons = 0.3202;   positrons = 0
+
+ Number of events with the primary particle transmitted = 100 %
+ Number of events with at least  1 particle transmitted (same charge as primary) = 100 %
+
+ Number of events with the primary particle reflected = 0 %
+ Number of events with at least  1 particle reflected (same charge as primary) = 0 %
+
+ MultipleScattering:
+  rms proj angle of transmit primary particle = 2.284 mrad (central part only)
+  computed theta0 (Highland formula)          = 2.307 mrad
+  central part defined as +- 6.921 mrad;   Tail ratio = 1.72 %
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 626729326, 1140088708
+----------------------------------------
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 626729326, 1140088708
+----------------------------------------
+
+ ======================== run summary ======================
+
+ The run was 10000 proton of 300 MeV through 1.34 m   of P10 (density: 1.53 mg/cm3)
+
+ Total energy deposit in absorber per event = 535.9 keV +- 1.131 keV
+
+ -----> Mean dE/dx = 0.003987 MeV/cm	(2.606 MeV*cm2/g)
+
+ From formulas :
+   restricted dEdx = 0.003636 MeV/cm	(2.376 MeV*cm2/g)
+   full dEdx       = 0.004084 MeV/cm	(2.669 MeV*cm2/g)
+
+ Leakage :  primary = 299.4 MeV +- 1.482 keV   secondaries = 9.82 keV +- 585.7 eV 
+ Energy balance :  edep + eleak = 300 MeV
+
+ Total track length (charged) in absorber per event = 1.448 m   +- 2.554 mm 
+ Total track length (neutral) in absorber per event = 2.458 mm  +- 380.6 um 
+
+ Number of steps (charged) in absorber per event = 676.5 +- 0.01598
+ Number of steps (neutral) in absorber per event = 0.0083 +- 0.01598
+
+ Number of secondaries per event : Gammas = 0.0083;   electrons = 0.3049;   positrons = 0
+
+ Number of events with the primary particle transmitted = 100 %
+ Number of events with at least  1 particle transmitted (same charge as primary) = 100 %
+
+ Number of events with the primary particle reflected = 0 %
+ Number of events with at least  1 particle reflected (same charge as primary) = 0 %
+
+ MultipleScattering:
+  rms proj angle of transmit primary particle = 2.098 mrad (central part only)
+  computed theta0 (Highland formula)          = 2.134 mrad
+  central part defined as +- 6.401 mrad;   Tail ratio = 1.75 %
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 1673738149, 356658327
+----------------------------------------
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 1673738149, 356658327
+----------------------------------------
+
+ ======================== run summary ======================
+
+ The run was 10000 proton of 325 MeV through 1.34 m   of P10 (density: 1.53 mg/cm3)
+
+ Total energy deposit in absorber per event = 511.4 keV +- 1.088 keV
+
+ -----> Mean dE/dx = 0.003805 MeV/cm	(2.487 MeV*cm2/g)
+
+ From formulas :
+   restricted dEdx = 0.003471 MeV/cm	(2.268 MeV*cm2/g)
+   full dEdx       = 0.003912 MeV/cm	(2.557 MeV*cm2/g)
+
+ Leakage :  primary = 324.5 MeV +- 1.448 keV   secondaries = 10.15 keV +- 624.8 eV 
+ Energy balance :  edep + eleak = 325 MeV
+
+ Total track length (charged) in absorber per event = 1.444 m   +- 2.434 mm 
+ Total track length (neutral) in absorber per event = 1.616 mm  +- 293.4 um 
+
+ Number of steps (charged) in absorber per event = 654.6 +- 0.0156
+ Number of steps (neutral) in absorber per event = 0.0086 +- 0.0156
+
+ Number of secondaries per event : Gammas = 0.0086;   electrons = 0.2943;   positrons = 0
+
+ Number of events with the primary particle transmitted = 100 %
+ Number of events with at least  1 particle transmitted (same charge as primary) = 100 %
+
+ Number of events with the primary particle reflected = 0 %
+ Number of events with at least  1 particle reflected (same charge as primary) = 0 %
+
+ MultipleScattering:
+  rms proj angle of transmit primary particle = 1.947 mrad (central part only)
+  computed theta0 (Highland formula)          = 1.986 mrad
+  central part defined as +- 5.959 mrad;   Tail ratio = 1.63 %
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 1272036621, 325328813
+----------------------------------------
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 1272036621, 325328813
+----------------------------------------
+
+ ======================== run summary ======================
+
+ The run was 10000 proton of 350 MeV through 1.34 m   of P10 (density: 1.53 mg/cm3)
+
+ Total energy deposit in absorber per event = 491.8 keV +- 1.08 keV
+
+ -----> Mean dE/dx = 0.00366 MeV/cm	(2.392 MeV*cm2/g)
+
+ From formulas :
+   restricted dEdx = 0.003329 MeV/cm	(2.176 MeV*cm2/g)
+   full dEdx       = 0.003766 MeV/cm	(2.461 MeV*cm2/g)
+
+ Leakage :  primary = 349.5 MeV +- 1.47 keV   secondaries = 10.78 keV +- 673.7 eV 
+ Energy balance :  edep + eleak = 350 MeV
+
+ Total track length (charged) in absorber per event = 1.444 m   +- 2.46 mm 
+ Total track length (neutral) in absorber per event = 1.647 mm  +- 306.9 um 
+
+ Number of steps (charged) in absorber per event = 636.9 +- 0.01568
+ Number of steps (neutral) in absorber per event = 0.0067 +- 0.01568
+
+ Number of secondaries per event : Gammas = 0.0067;   electrons = 0.2893;   positrons = 0
+
+ Number of events with the primary particle transmitted = 100 %
+ Number of events with at least  1 particle transmitted (same charge as primary) = 100 %
+
+ Number of events with the primary particle reflected = 0 %
+ Number of events with at least  1 particle reflected (same charge as primary) = 0 %
+
+ MultipleScattering:
+  rms proj angle of transmit primary particle = 1.813 mrad (central part only)
+  computed theta0 (Highland formula)          = 1.86 mrad
+  central part defined as +- 5.58 mrad;   Tail ratio = 1.67 %
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 436689091, 2112317508
+----------------------------------------
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 436689091, 2112317508
+----------------------------------------
+
+ ======================== run summary ======================
+
+ The run was 10000 proton of 375 MeV through 1.34 m   of P10 (density: 1.53 mg/cm3)
+
+ Total energy deposit in absorber per event = 472.6 keV +- 1.052 keV
+
+ -----> Mean dE/dx = 0.003516 MeV/cm	(2.298 MeV*cm2/g)
+
+ From formulas :
+   restricted dEdx = 0.003207 MeV/cm	(2.096 MeV*cm2/g)
+   full dEdx       = 0.003639 MeV/cm	(2.378 MeV*cm2/g)
+
+ Leakage :  primary = 374.5 MeV +- 1.462 keV   secondaries = 10.48 keV +- 676 eV 
+ Energy balance :  edep + eleak = 375 MeV
+
+ Total track length (charged) in absorber per event = 1.436 m   +- 2.358 mm 
+ Total track length (neutral) in absorber per event = 1.953 mm  +- 359.6 um 
+
+ Number of steps (charged) in absorber per event = 594.2 +- 0.01535
+ Number of steps (neutral) in absorber per event = 0.0079 +- 0.01535
+
+ Number of secondaries per event : Gammas = 0.0079;   electrons = 0.2731;   positrons = 0
+
+ Number of events with the primary particle transmitted = 100 %
+ Number of events with at least  1 particle transmitted (same charge as primary) = 100 %
+
+ Number of events with the primary particle reflected = 0 %
+ Number of events with at least  1 particle reflected (same charge as primary) = 0 %
+
+ MultipleScattering:
+  rms proj angle of transmit primary particle = 1.719 mrad (central part only)
+  computed theta0 (Highland formula)          = 1.75 mrad
+  central part defined as +- 5.25 mrad;   Tail ratio = 1.73 %
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 1285522477, 362243323
+----------------------------------------
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 1285522477, 362243323
+----------------------------------------
+
+ ======================== run summary ======================
+
+ The run was 10000 proton of 400 MeV through 1.34 m   of P10 (density: 1.53 mg/cm3)
+
+ Total energy deposit in absorber per event = 458 keV +- 1.034 keV
+
+ -----> Mean dE/dx = 0.003408 MeV/cm	(2.227 MeV*cm2/g)
+
+ From formulas :
+   restricted dEdx = 0.003101 MeV/cm	(2.027 MeV*cm2/g)
+   full dEdx       = 0.003528 MeV/cm	(2.306 MeV*cm2/g)
+
+ Leakage :  primary = 399.5 MeV +- 1.479 keV   secondaries = 10.96 keV +- 695.7 eV 
+ Energy balance :  edep + eleak = 400 MeV
+
+ Total track length (charged) in absorber per event = 1.435 m   +- 2.303 mm 
+ Total track length (neutral) in absorber per event = 1.366 mm  +- 270.9 um 
+
+ Number of steps (charged) in absorber per event = 577.3 +- 0.01518
+ Number of steps (neutral) in absorber per event = 0.0063 +- 0.01518
+
+ Number of secondaries per event : Gammas = 0.0063;   electrons = 0.2656;   positrons = 0
+
+ Number of events with the primary particle transmitted = 100 %
+ Number of events with at least  1 particle transmitted (same charge as primary) = 100 %
+
+ Number of events with the primary particle reflected = 0 %
+ Number of events with at least  1 particle reflected (same charge as primary) = 0 %
+
+ MultipleScattering:
+  rms proj angle of transmit primary particle = 1.626 mrad (central part only)
+  computed theta0 (Highland formula)          = 1.653 mrad
+  central part defined as +- 4.96 mrad;   Tail ratio = 1.685 %
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 2147284558, 374844475
+----------------------------------------
